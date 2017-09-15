@@ -15,11 +15,12 @@ def run_game():
     pygame.display.set_caption("Allien Invasion")
 
     #创建一艘飞船
-    ship = Ship(screen)
+    ship = Ship(screen, ai_settings)
 
     #开始游戏的主循环
     while True:
-        gf.check_events()
-        gf.update_screen()
+        gf.check_events(ship)
+        ship.update()
+        gf.update_screen(ai_settings, screen, ship)
 
 run_game()
