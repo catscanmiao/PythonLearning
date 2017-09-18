@@ -1,0 +1,5 @@
+1、安装matplotlib模块后，并不能展示数据，经查资料后需要设置Agg属性
+
+import matplotlib
+
+matplotlib.use("Agg")
