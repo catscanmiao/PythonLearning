@@ -9,11 +9,22 @@ while True:
     rw = RandomWalk()
     rw.fill_walk()
 
-    point_numbers = list(range(rw.num_point))
-    plt.scatter(rw.x_value, rw.y_value, edgecolor='none', s=5, c=point_numbers, cmap=plt.cm.Blues)
-    #plt.savefig('x_value.png')
-    plt.show()
+    #设置尺寸
+    plt.figure(dpi=128, figsize=(10,6))
 
+    point_numbers = list(range(rw.num_point))
+    plt.plot(rw.x_value, rw.y_value, linewidth=1)
+    #plt.savefig('x_value.png')
+    plt.plot(0, 0, linewidth=5)
+    plt.plot(rw.x_value[-1], rw.y_value[-1], linewidth=5)
+
+    #隐藏坐标轴
+    plt.axes().get_xaxis().set_visible(False)
+    plt.axes().get_yaxis().set_visible(False)
+
+    plt.show()
+    
     keep_running = input("Make another walk? (y/n): ")
     if keep_running == 'n':
         break
+    

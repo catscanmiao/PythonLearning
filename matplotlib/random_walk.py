@@ -10,6 +10,9 @@ class RandomWalk():
         self.x_value = [0]
         self.y_value = [0]
 
+    def get_step(self):
+        
+
     def fill_walk(self):
         """计算随机漫步包含的所有点"""
 
